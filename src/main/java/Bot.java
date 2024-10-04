@@ -521,23 +521,7 @@ public class Bot extends TelegramLongPollingBot {
             .keyboardRow(List.of(augmentation2))
             .keyboardRow(List.of(augmentation3))
             .build();
-    public InlineKeyboardButton differ1 = InlineKeyboardButton.builder()
-            .text("Отличаться")
-            .callbackData("отличаться")
-            .build();
-    public InlineKeyboardButton differ2 = InlineKeyboardButton.builder()
-            .text("Разный")
-            .callbackData("разный")
-            .build();
-    public InlineKeyboardButton differ3 = InlineKeyboardButton.builder()
-            .text("Изменённый")
-            .callbackData("изменённый")
-            .build();
-    private InlineKeyboardMarkup sendQuestionTwentyNine = InlineKeyboardMarkup.builder()
-            .keyboardRow(List.of(differ1))
-            .keyboardRow(List.of(differ2))
-            .keyboardRow(List.of(differ3))
-            .build();
+
 
     public InlineKeyboardButton lever1 = InlineKeyboardButton.builder()
             .text("Уровень")
@@ -551,10 +535,27 @@ public class Bot extends TelegramLongPollingBot {
             .text("Экран")
             .callbackData("экран")
             .build();
-    private InlineKeyboardMarkup sendQuestionThirty = InlineKeyboardMarkup.builder()
+    private InlineKeyboardMarkup sendQuestionTwentyNine = InlineKeyboardMarkup.builder()
             .keyboardRow(List.of(lever1))
             .keyboardRow(List.of(lever2))
             .keyboardRow(List.of(lever3))
+            .build();
+    public InlineKeyboardButton differ1 = InlineKeyboardButton.builder()
+            .text("Отличаться")
+            .callbackData("отличаться")
+            .build();
+    public InlineKeyboardButton differ2 = InlineKeyboardButton.builder()
+            .text("Разный")
+            .callbackData("разный")
+            .build();
+    public InlineKeyboardButton differ3 = InlineKeyboardButton.builder()
+            .text("Изменённый")
+            .callbackData("изменённый")
+            .build();
+    private InlineKeyboardMarkup sendQuestionThirty = InlineKeyboardMarkup.builder()
+            .keyboardRow(List.of(differ1))
+            .keyboardRow(List.of(differ2))
+            .keyboardRow(List.of(differ3))
             .build();
 
 
@@ -917,25 +918,26 @@ public class Bot extends TelegramLongPollingBot {
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyEight);
             }
 
-            else if (data.equals("увлечение")) {
+            else if (data.equals("увелечение")) {
                 editMessageText.setText("Как переводится слово augmentation?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyNine);
             } else if (data.equals("аргументация")) {
                 updateUser.addBall();
                 editMessageText.setText("Как переводится слово lever?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyNine);
-            } else if (data.equals("аргумент")) {
-                editMessageText.setText("Как переводится слово lever?");
-                editMessageReplyMarkup.setReplyMarkup(sendQuestionNine);
+
             } else if (data.equals("уровень")) {
                 updateUser.addBall();
                 editMessageText.setText("Как переводится слово differ?");
-                editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
+                editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyNine);
             } else if (data.equals("рычаг")) {
                 editMessageText.setText("Как переводится слово differ?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
             } else if (data.equals("экран")) {
                 editMessageText.setText("Как переводится слово differ?");
+                editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
+            } else if (data.equals("аргумент")) {
+                editMessageText.setText("Как переводится слово lever?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
             } else if (data.equals("отличаться")) {
                 editMessageText.setText(getPercent(updateUser.getCountBallov(), firstName));
