@@ -425,7 +425,7 @@ public class Bot extends TelegramLongPollingBot {
             .build();
     public InlineKeyboardButton silmarilion2 = InlineKeyboardButton.builder()
             .text("1934")
-            .callbackData("1934_silmarilion2")
+            .callbackData("1934_silmatilion2")
             .build();
     public InlineKeyboardButton silmarilion3 = InlineKeyboardButton.builder()
             .text("1986")
@@ -521,7 +521,23 @@ public class Bot extends TelegramLongPollingBot {
             .keyboardRow(List.of(augmentation2))
             .keyboardRow(List.of(augmentation3))
             .build();
-
+    public InlineKeyboardButton differ1 = InlineKeyboardButton.builder()
+            .text("Отличаться")
+            .callbackData("отличаться")
+            .build();
+    public InlineKeyboardButton differ2 = InlineKeyboardButton.builder()
+            .text("Разный")
+            .callbackData("разный")
+            .build();
+    public InlineKeyboardButton differ3 = InlineKeyboardButton.builder()
+            .text("Изменённый")
+            .callbackData("изменённый")
+            .build();
+    private InlineKeyboardMarkup sendQuestionTwentyNine = InlineKeyboardMarkup.builder()
+            .keyboardRow(List.of(differ1))
+            .keyboardRow(List.of(differ2))
+            .keyboardRow(List.of(differ3))
+            .build();
 
     public InlineKeyboardButton lever1 = InlineKeyboardButton.builder()
             .text("Уровень")
@@ -535,27 +551,10 @@ public class Bot extends TelegramLongPollingBot {
             .text("Экран")
             .callbackData("экран")
             .build();
-    private InlineKeyboardMarkup sendQuestionTwentyNine = InlineKeyboardMarkup.builder()
+    private InlineKeyboardMarkup sendQuestionThirty = InlineKeyboardMarkup.builder()
             .keyboardRow(List.of(lever1))
             .keyboardRow(List.of(lever2))
             .keyboardRow(List.of(lever3))
-            .build();
-    public InlineKeyboardButton differ1 = InlineKeyboardButton.builder()
-            .text("Отличаться")
-            .callbackData("отличаться")
-            .build();
-    public InlineKeyboardButton differ2 = InlineKeyboardButton.builder()
-            .text("Разный")
-            .callbackData("разный")
-            .build();
-    public InlineKeyboardButton differ3 = InlineKeyboardButton.builder()
-            .text("Изменённый")
-            .callbackData("изменённый")
-            .build();
-    private InlineKeyboardMarkup sendQuestionThirty = InlineKeyboardMarkup.builder()
-            .keyboardRow(List.of(differ1))
-            .keyboardRow(List.of(differ2))
-            .keyboardRow(List.of(differ3))
             .build();
 
 
@@ -869,7 +868,7 @@ public class Bot extends TelegramLongPollingBot {
                 updateUser.addBall();
                 editMessageText.setText("When was first horrow film?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyFour);
-            } else if (data.equals("1934_silmarilion2")) {
+            } else if (data.equals("1934_silmatilion2")) {
                 editMessageText.setText("When was first horrow film?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyFour);
             } else if (data.equals("1986")) {
@@ -919,25 +918,24 @@ public class Bot extends TelegramLongPollingBot {
             }
 
             else if (data.equals("увелечение")) {
-                editMessageText.setText("Как переводится слово augmentation?");
+                editMessageText.setText("Как переводится слово lever?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyNine);
             } else if (data.equals("аргументация")) {
                 updateUser.addBall();
                 editMessageText.setText("Как переводится слово lever?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyNine);
-
+            } else if (data.equals("аргумент")) {
+                editMessageText.setText("Как переводится слово lever?");
+                editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyNine);
             } else if (data.equals("уровень")) {
                 updateUser.addBall();
                 editMessageText.setText("Как переводится слово differ?");
-                editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyNine);
-            } else if (data.equals("рычаг")) {
+                editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
+            } else if (data.equals("Как переводится слово lever?")) {
                 editMessageText.setText("Как переводится слово differ?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
             } else if (data.equals("экран")) {
                 editMessageText.setText("Как переводится слово differ?");
-                editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
-            } else if (data.equals("аргумент")) {
-                editMessageText.setText("Как переводится слово lever?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionThirty);
             } else if (data.equals("отличаться")) {
                 editMessageText.setText(getPercent(updateUser.getCountBallov(), firstName));
