@@ -38,6 +38,7 @@ public class User {
     }
 
     public Integer getCountBallov() {
+        System.out.println("Колл.баллов: " + countBallov);
         return countBallov;
     }
 

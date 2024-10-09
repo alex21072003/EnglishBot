@@ -378,7 +378,7 @@ public class Bot extends TelegramLongPollingBot {
             .build();
     public InlineKeyboardButton history3 = InlineKeyboardButton.builder()
             .text("On Midsummer's Day in 1509 a 17 year old was crowned king of England.")
-            .callbackData("O M's Day in 1509 a 17 y old w cr k o E.")
+            .callbackData("1509")
             .build();
     private InlineKeyboardMarkup sendQuestionTwenty = InlineKeyboardMarkup.builder()
             .keyboardRow(List.of(history1))
@@ -438,7 +438,7 @@ public class Bot extends TelegramLongPollingBot {
             .build();
     public InlineKeyboardButton horrow1 = InlineKeyboardButton.builder()
             .text("Nightmare on Elm Street")
-            .callbackData("nightmare on Elm Street")
+            .callbackData("nightmare")
             .build();
     public InlineKeyboardButton horrow2 = InlineKeyboardButton.builder()
             .text("Scream")
@@ -703,9 +703,9 @@ public class Bot extends TelegramLongPollingBot {
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionSeven);
             } else if (data.equals("memoreze")) {
                 editMessageText.setText("Who write Jane Eir?");
-                updateUser.addBall();
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionEight);
             } else if (data.equals("memorize")) {
+                updateUser.addBall();
                 editMessageText.setText("Who write Jane Eir?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionEight);
             } else if (data.equals("mimeroze")) {
@@ -839,7 +839,7 @@ public class Bot extends TelegramLongPollingBot {
             } else if (data.equals("he has very much wives")) {
                 editMessageText.setText("How much cost medicine in UK?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyOne);
-            } else if (data.equals("O M's Day in 1509 a 17 y old w cr k o E.")) {
+            } else if (data.equals("1509")) {
                 updateUser.addBall();
                 editMessageText.setText("How much cost medicine in UK?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyOne);
@@ -875,7 +875,7 @@ public class Bot extends TelegramLongPollingBot {
                 editMessageText.setText("When was first horrow film?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyFour);
 
-            } else if (data.equals("nightmare on Elm Street")) {
+            } else if (data.equals("nightmare")) {
                 editMessageText.setText("Как переводится слово buzzkiller?");
                 editMessageReplyMarkup.setReplyMarkup(sendQuestionTwentyFive);
             } else if (data.equals("scream")) {
@@ -967,11 +967,11 @@ public class Bot extends TelegramLongPollingBot {
         User user = listUsers.get(firstName); //listUsers.get(update.getMessage().getFrom().getFirstName());
         int countQuestions = 30;
         int percent = (countBallov * 100) / countQuestions;
-        if (percent >= 100) {
+        if (percent > 100) {
             percent = 100;
         }
         String response = user.getFirstName() + ", Вы прошли тест и правильно выполнили " + percent + "% заданий!";
-        if (percent == 100) {
+//        if (percent == 100) {
 //            metadata = new MetadataSources(registry)
 //                    .getMetadataBuilder().build();
 //            sessionFactory = metadata.getSessionFactoryBuilder().build();
@@ -984,11 +984,15 @@ public class Bot extends TelegramLongPollingBot {
 //            session.clear();
 //            transaction.commit();
 //            sessionFactory.close();
-            listUsersId.add(user.getId());
-
-            return response + ".\nТеперь Вы можете связаться с заказчиком\nпо его нику в телеграмме - @ogarJavaDev";
-        }
-        System.out.println("Пользователь \"" + user.getFirstName() + "\" прошёл тест на " + percent + "%.");
+//            listUsersId.add(user.getId());
+//
+//            return response + ".\nТеперь Вы можете связаться с заказчиком\nпо его нику в телеграмме - english3_27_bot";
+//        } else {
+//
+//
+//            System.out.println("Пользователь \"" + user.getFirstName() + "\" прошёл тест на " + percent + "%.");
+//            return response;
+//        }
         return response;
     }
 
